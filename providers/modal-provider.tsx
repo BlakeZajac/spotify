@@ -16,16 +16,18 @@ const ModalProvider = () => {
     return null;
   }
 
-  <>
-    <Modal
-      title="Test modal"
-      description="Test description"
-      isOpen
-      onChange={() => {}}
-    >
-      Children
-    </Modal>
-  </>;
+  return (
+    <>
+      <Modal
+        title="Test modal"
+        description="Test description"
+        isOpen
+        onChange={() => {}}
+      >
+        Children
+      </Modal>
+    </>
+  );
 };
 
 export default ModalProvider;
