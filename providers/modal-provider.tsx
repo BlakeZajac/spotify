@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-import Modal from "@/components/modal";
+import AuthModal from "@/components/auth-modal";
 
 const ModalProvider = () => {
   // Prevent modals from loading whilst server side rendering (hydration errors)
@@ -18,14 +18,7 @@ const ModalProvider = () => {
 
   return (
     <>
-      <Modal
-        title="Test modal"
-        description="Test description"
-        isOpen
-        onChange={() => {}}
-      >
-        Children
-      </Modal>
+      <AuthModal />
     </>
   );
 };
