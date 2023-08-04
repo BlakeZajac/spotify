@@ -31,7 +31,6 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
     router.refresh();
 
     if (error) {
-      console.log(error);
       toast.error(error.message);
     } else {
       toast.success("You are now logged out.");

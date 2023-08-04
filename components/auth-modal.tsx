@@ -12,11 +12,7 @@ import { ThemeSupa } from "@supabase/auth-ui-shared";
 import Modal from "@/components/modal";
 import { useEffect } from "react";
 
-interface AuthModalProps {
-  children: React.ReactNode;
-}
-
-const AuthModal: React.FC<AuthModalProps> = ({ children }) => {
+const AuthModal = () => {
   const supabaseClient = useSupabaseClient();
   const router = useRouter();
   const { session } = useSessionContext();

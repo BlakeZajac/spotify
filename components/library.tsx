@@ -1,13 +1,29 @@
 "use client";
 
+import useAuthModal from "@/hooks/useAuthModal";
+import useUploadModal from "@/hooks/useUploadModal";
+import { useUser } from "@/hooks/useUser";
+import { toast } from "react-hot-toast";
 import { AiOutlinePlus } from "react-icons/ai";
 import { TbPlaylist } from "react-icons/tb";
 
 interface LibraryProps {}
 
 const Library: React.FC<LibraryProps> = ({}) => {
+  const authModal = useAuthModal();
+  const uploadModal = useUploadModal();
+  const { user, subscription } = useUser();
+
   const onClick = () => {
-    // Handle upload
+    if (!user) {
+      toast("You must be logged in.", {
+        icon: "⚠️",
+      });
+      return authModal.onOpen();
+    }
+
+    // To-do: Check for subscriptions
+    return uploadModal.onOpen();
   };
 
   return (
