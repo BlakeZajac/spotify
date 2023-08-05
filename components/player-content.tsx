@@ -18,7 +18,7 @@ interface PlayerContentProps {
 
 const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
   const player = usePlayer();
-  const [volume, setVolume] = useState(1);
+  const [volume, setVolume] = useState(0.25);
   const [isPlaying, setIsPlaying] = useState(false);
 
   const Icon = isPlaying ? BsPauseFill : BsPlayFill;
@@ -83,7 +83,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
 
   const toggleMute = () => {
     if (volume === 0) {
-      setVolume(1);
+      setVolume(0.25);
     } else {
       setVolume(0);
     }
@@ -100,7 +100,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
 
       <div className="flex md:hidden col-auto w-full justify-end items-center">
         <div
-          onClick={() => {}}
+          onClick={handlePlay}
           className="h-10 w-10 flex items-center justify-center rounded-full bg-white p-1 cursor-pointer"
         >
           <Icon size={24} className="text-black" />
