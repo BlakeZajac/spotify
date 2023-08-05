@@ -4,6 +4,7 @@ import useDebounce from "@/hooks/useDebounce";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import qs from "query-string";
+import Input from "@/components/input";
 
 interface SearchInputProps {}
 
@@ -19,13 +20,18 @@ const SearchInput: React.FC<SearchInputProps> = ({}) => {
 
     const url = qs.stringifyUrl({
       url: "/search",
+      query: query,
     });
-  }, []);
+
+    router.push(url);
+  }, [debouncedValue, router]);
 
   return (
-    <div>
-      <div></div>
-    </div>
+    <Input
+      placeholder="What would you like to listen to?"
+      value={value}
+      onChange={(e) => setValue(e.target.value)}
+    />
   );
 };
 
