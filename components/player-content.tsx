@@ -9,6 +9,8 @@ import { AiFillStepBackward, AiFillStepForward } from "react-icons/ai";
 import { HiSpeakerWave, HiSpeakerXMark } from "react-icons/hi2";
 import usePlayer from "@/hooks/usePlayer";
 import { useEffect, useState } from "react";
+// @ts-ignore
+// eslint-disable-next-line
 import useSound from "use-sound";
 
 interface PlayerContentProps {
