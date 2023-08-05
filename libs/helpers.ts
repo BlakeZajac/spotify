@@ -4,10 +4,12 @@ export const getURL = () => {
   let url =
     process.env.NEXT_PUBLIC_SITE_URL ??
     process.env.NEXT_PUBLIC_VERCEL_URL ??
-    "https://localhost:3000/";
+    "http://localhost:3000/";
 
   url = url.includes("http") ? url : `https://${url}`;
-  url = url.charAt(url.length - 1) === "/" ? url : `${url}/`;
+
+  // Remove any trailing slash at the end of the URL
+  url = url.replace(/\/$/, "");
 
   return url;
 };
