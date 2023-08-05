@@ -1,5 +1,6 @@
 "use client";
 
+import LikeButton from "@/components/like-button";
 import MediaItem from "@/components/media-item";
 import { Song } from "@/types";
 
